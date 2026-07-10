@@ -1,0 +1,2 @@
+import type { MetadataRoute } from "next"; import { locales } from "@/locales/config";
+export default function sitemap():MetadataRoute.Sitemap{const base="https://example.com",paths=["","/products","/products/mx35","/factory","/videos","/downloads","/contact"];return locales.flatMap(locale=>paths.map(path=>({url:`${base}/${locale}${path}`,lastModified:new Date(),changeFrequency:path===""?"weekly" as const:"monthly" as const,priority:path===""?1:path.includes("products")?.9:.7,alternates:{languages:Object.fromEntries(locales.map(x=>[x,`${base}/${x}${path}`]))}})))}
