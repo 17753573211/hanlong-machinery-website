@@ -1,0 +1,9 @@
+"use client";
+import Image from "next/image";
+import { useCallback,useEffect,useState } from "react";
+export function ProductGallery({images,model,label}:{images:string[];model:string;label:string}){
+ const[index,setIndex]=useState(0),[open,setOpen]=useState(false);
+ const move=useCallback((n:number)=>setIndex(current=>(current+n+images.length)%images.length),[images.length]);
+ useEffect(()=>{if(!open)return;const key=(e:KeyboardEvent)=>{if(e.key==="Escape")setOpen(false);if(e.key==="ArrowLeft")move(-1);if(e.key==="ArrowRight")move(1)};window.addEventListener("keydown",key);return()=>window.removeEventListener("keydown",key)},[open,move]);
+ return <section className="machine-gallery" aria-label={label}><button className="gallery-main" onClick={()=>setOpen(true)} aria-label={`${label} ${index+1}`}><Image src={images[index]} alt={`${model} ${label} ${index+1}`} fill sizes="(max-width:800px) 100vw,70vw" unoptimized/></button><div className="gallery-controls"><button onClick={()=>move(-1)} aria-label="Previous image">←</button><span>{String(index+1).padStart(2,"0")} / {String(images.length).padStart(2,"0")}</span><button onClick={()=>move(1)} aria-label="Next image">→</button></div><div className="gallery-thumbs">{images.map((src,i)=><button key={src} className={i===index?"active":""} onClick={()=>setIndex(i)} aria-label={`${label} ${i+1}`}><Image src={src} alt="" fill sizes="120px" unoptimized/></button>)}</div>{open&&<div className="gallery-lightbox" role="dialog" aria-modal="true"><button className="gallery-close" onClick={()=>setOpen(false)} aria-label="Close">×</button><button className="gallery-prev" onClick={()=>move(-1)} aria-label="Previous">←</button><Image src={images[index]} alt={`${model} ${label} ${index+1}`} fill sizes="100vw" unoptimized/><button className="gallery-next" onClick={()=>move(1)} aria-label="Next">→</button></div>}</section>
+}
