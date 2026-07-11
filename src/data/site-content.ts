@@ -2,10 +2,10 @@ export const factoryContent = {
   title: "Self-loading concrete mixers manufactured at the source",
   intro: "Our manufacturing base brings equipment display, component preparation, fabrication, assembly and inspection into a coordinated production environment. Customers can review both the complete machine range and the work behind each unit.",
   sections: [
-    { title:"Factory & equipment yard", text:"A dedicated factory site with multiple self-loading mixer capacities available for product inspection and production planning.", image:"/media/factory/exterior.jpg" },
-    { title:"Fabrication capability", text:"Organized steel preparation and fabrication areas support the structural production of mixer chassis, loading systems and related assemblies.", image:"/media/factory/production.jpg" },
-    { title:"Assembly workshop", text:"Indoor production lines bring together mechanical, hydraulic and electrical systems before machine commissioning.", image:"/media/factory/workshop.jpg" },
-    { title:"Parts organization", text:"Component and parts areas support assembly scheduling, configuration work and after-sales parts preparation.", image:"/media/factory/parts.jpg" },
+    { title:"Factory & equipment yard", text:"A dedicated factory site with multiple self-loading mixer capacities available for product inspection and production planning.", image:"/media/factory/exterior.webp" },
+    { title:"Fabrication capability", text:"Organized steel preparation and fabrication areas support the structural production of mixer chassis, loading systems and related assemblies.", image:"/media/factory/production.webp" },
+    { title:"Assembly workshop", text:"Indoor production lines bring together mechanical, hydraulic and electrical systems before machine commissioning.", image:"/media/factory/workshop.webp" },
+    { title:"Parts organization", text:"Component and parts areas support assembly scheduling, configuration work and after-sales parts preparation.", image:"/media/factory/parts.webp" },
   ],
   differentiators: ["Three independent pump system", "Widened wheel track", "Excavator-type hydraulic oil filtration", "Reinforced crossbeam", "Thickened bearing rollers and gears", "Hydraulic heat-dissipation design"],
 };
