@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { locales, type Locale } from "@/locales/config";
 
-export const SITE_URL = (process.env.SITE_URL || "https://example.com").replace(/\/$/, "");
+export const SITE_URL = (process.env.SITE_URL || "https://hanlongs.com").replace(/\/$/, "");
 export const CORE_KEYWORDS = ["Self Loading Concrete Mixer","Self Loading Mixer Truck","Concrete Mixer Truck Manufacturer","China Self Loading Mixer Factory","Automatic Loading Concrete Mixer"];
 const hrefLang: Record<Locale,string> = { en:"en", zh:"zh-CN", pt:"pt", es:"es", fr:"fr" };
 

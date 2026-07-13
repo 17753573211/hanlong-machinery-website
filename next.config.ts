@@ -2,18 +2,11 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
-    // Product media is already exported as WebP and may live on OSS/R2.
-    // Avoid proxying large remote files through the Vercel image optimizer.
-    unoptimized: true,
+    // Cloudflare Images and the ASSETS binding only exist in the deployed
+    // Worker. In local Vinext development, serve the already optimized WebP
+    // files directly instead of calling /_vinext/image without those bindings.
+    unoptimized: process.env.NODE_ENV !== "production",
     formats: ["image/avif", "image/webp"],
-  },
-  async rewrites() {
-    const mediaBase = process.env.MEDIA_BASE_URL?.replace(/\/$/, "");
-    if (!mediaBase) return [];
-    return [
-      { source: "/media/:path*", destination: `${mediaBase}/media/:path*` },
-      { source: "/videos/:path*", destination: `${mediaBase}/videos/:path*` },
-    ];
   },
 };
 

@@ -45,7 +45,5 @@ next-env.d.ts
 # immutable source materials and generated review files
 /assets/
 /tmp/
-site-deploy*.tar.gz
-
 public/videos/
 public/media/
