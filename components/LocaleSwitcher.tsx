@@ -12,21 +12,23 @@ export function LocaleSwitcher({ locale, label }: { locale: Locale; label: strin
   const menuId = useId();
 
   useEffect(() => {
-    const close = (event: PointerEvent) => {
+    const close = (event: MouseEvent | TouchEvent) => {
       if (!root.current?.contains(event.target as Node)) setOpen(false);
     };
     const closeOnEscape = (event: KeyboardEvent) => {
       if (event.key === "Escape") setOpen(false);
     };
-    document.addEventListener("pointerdown", close);
+    document.addEventListener("click", close);
+    document.addEventListener("touchend", close);
     document.addEventListener("keydown", closeOnEscape);
     return () => {
-      document.removeEventListener("pointerdown", close);
+      document.removeEventListener("click", close);
+      document.removeEventListener("touchend", close);
       document.removeEventListener("keydown", closeOnEscape);
     };
   }, []);
 
-  return <div className={`language${open ? " is-open" : ""}`} ref={root} onPointerDown={event => event.stopPropagation()}>
+  return <div className={`language${open ? " is-open" : ""}`} ref={root}>
     <button
       type="button"
       aria-label={label}
