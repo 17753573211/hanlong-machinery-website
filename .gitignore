@@ -37,13 +37,13 @@ yarn-error.log*
 
 # typescript
 next-env.d.ts
+*.tsbuildinfo
 /dist/
 /.wrangler/
 /outputs/
 /work/
 
-# immutable source materials and generated review files
+# Immutable source materials and generated review files. The optimized website
+# assets under public/ are intentionally versioned for Vercel Preview builds.
 /assets/
 /tmp/
-public/videos/
-public/media/

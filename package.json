@@ -6,9 +6,12 @@
     "node": ">=22.13.0"
   },
   "scripts": {
-    "dev": "vinext dev --hostname 0.0.0.0 --port 3000",
-    "build": "vinext build",
-    "start": "vinext start",
+    "dev": "next dev --hostname 0.0.0.0 --port 3000",
+    "build": "next build",
+    "start": "next start --hostname 0.0.0.0 --port 3000",
+    "dev:sites": "vinext dev --hostname 0.0.0.0 --port 3000",
+    "build:sites": "vinext build",
+    "start:sites": "vinext start",
     "test": "npm run build && node --test tests/rendered-html.test.mjs",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next",
     "db:generate": "drizzle-kit generate"
