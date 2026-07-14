@@ -29,4 +29,8 @@ Optimized website images, videos and downloadable PDFs are versioned from
 `public/media` and `public/videos`. Original source materials in `assets` stay
 local and are not required by the deployment build.
 
+Every `npm run build` starts with a resource integrity check. The build stops
+instead of publishing a broken Preview if a referenced image, video or PDF is
+missing from `public/`.
+
 Do not attach `hanlongs.com` or change Cloudflare DNS during Preview testing.

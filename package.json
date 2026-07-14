@@ -7,6 +7,7 @@
   },
   "scripts": {
     "dev": "next dev --hostname 0.0.0.0 --port 3000",
+    "prebuild": "node scripts/verify-vercel-assets.mjs",
     "build": "next build",
     "start": "next start --hostname 0.0.0.0 --port 3000",
     "dev:sites": "vinext dev --hostname 0.0.0.0 --port 3000",
